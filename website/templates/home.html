@@ -1,0 +1,232 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Add Errand
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h3 class="modal-title" id="exampleModalLabel">Errand</h3>
+      </div>
+      <div class="modal-body">
+        <h5 class="card-title text-center">Basic information</h5>
+        <form method="POST">
+    <div class="container">
+    <div class="row align-items-center mb-3">
+        <div class="col">
+            <label class="form-label">Faculty</label>
+            <select name="faculty" class="form-select" aria-label="Select Faculty">
+                <option selected disabled>Select Faculty</option>
+                <option value="HS (Health and Society)">HS (Health and Society)</option>
+                <option value="LS (Learning and Society)">LS (Learning and Society)</option>
+                <option value="KS (Culture and Society)">KS (Culture and Society)</option>
+                <option value="TS (Technology and Society)">TS (Technology and Society)</option>
+            </select>
+        </div>
+    </div>
+    <div class="row align-items-center mb-3">
+        <div class="col">
+            <label class="form-label">Institution</label>
+            <select name="institution" class="form-select" aria-label="Select Institution">
+                <option selected disabled>Select Institution</option>
+                <option value="Biomedical Science">Biomedical Science</option>
+                <option value="Criminology">Criminology</option>
+                <option value="Social Work">Social Work</option>
+                <option value="Nursing">Nursing</option>
+                <option value="Police Studies">Police Studies</option>
+            </select>
+        </div>
+    </div>
+     <div class="row align-items-center mb-3">
+        <div class="col">
+            <label class="form-label">Program</label>
+            <select name="program" class="form-select" aria-label="Select Program">
+                <option selected disabled>Select Program</option>
+                <option value="Biomedical Analyst Program">Biomedical Analyst Program</option>
+                <option value="Criminology Program">Criminology Program</option>
+                <option value="Nursing Program">Nursing Program</option>
+                <option value="Social Pedagogical Work with Disability Focus">Social Pedagogical Work with Disability Focus</option>
+                <option value="Social Work Program">Social Work Program</option>
+                <option value="Police Program">Police Program</option>
+                <option value="Biomedical Surface Science Master's Program">Biomedical Surface Science Master's Program</option>
+                <option value="Criminology Master's Program">Criminology Master's Program</option>
+                <option value="Nursing Master's Program">Nursing Master's Program</option>
+                <option value="Sexology Master's Program">Sexology Master's Program</option>
+                <option value="Social Work Master's Program">Social Work Master's Program</option>
+                <option value="Specialist Nursing Program for Children and Youth">Specialist Nursing Program for Children and Youth</option>
+                <option value="Specialist Nursing Program for Medical Care">Specialist Nursing Program for Medical Care</option>
+                <option value="Specialist Nursing Program for Psychiatric Car">Specialist Nursing Program for Psychiatric Care</option>
+                <option value="Specialist Nursing Program for Elderly Care">Specialist Nursing Program for Elderly Care</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col">
+            <label for="term" class="form-label">Term</label>
+            <input type="number" name="term" id="term" class="form-control" placeholder="Enter Term (1 - 10 / Independent Course: 0)">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email Address">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col">
+            <label for="note" class="form-label">Errand</label>
+            <textarea name="note" id="note" class="form-control" required minlength="1"></textarea>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</div>
+
+
+        <br />
+<!--        <h3 align="left">Ombudman comment</h3>-->
+<!--         <div class="col">-->
+<!--             <div class="text-left">-->
+<!--            <label  class="col-form-label">Kategori</label>-->
+<!--            <select class="form-select" aria-label="Default select example">-->
+<!--        <option selected>Open this select menu</option>-->
+<!--        <option value="1">Studiemiljö / Study environment</option>-->
+<!--        <option value="2">Administration / Administration</option>-->
+<!--        <option value="3">Studentinflytande / Student influence</option>-->
+<!--        <option value="4">Avsteg från kursplaner / Deviation from course syllabi</option>-->
+<!--        <option value="5"> VFU och praktik, inklusive bedömning av densamma / VFU and practice, including assessment of it</option>-->
+<!--        <option value="6">Bedömning och betyg / Assessment and grades</option>-->
+<!--        <option value="7"> Diskriminering; trakasserier; kränkande behandling / Discrimination; harassment; offensive treatment</option>-->
+<!--        </select>-->
+<!--        </div>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--        <div class="text-left">-->
+<!--    <label class="col-form-label">Nivå av hantering</label>-->
+<!--        <br/>-->
+<!--        <div class="form-check">-->
+<!--            <input class="form-check-input" type="checkbox" value="">-->
+<!--            <label class="form-check-label">-->
+<!--                Student-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <input class="form-check-input" type="checkbox" value="">-->
+<!--            <label class="form-check-label">-->
+<!--                Lärare // Teacher-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <input class="form-check-input" type="checkbox" value="">-->
+<!--            <label class="form-check-label">-->
+<!--                Kursansvarig // Course-responsible-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <input class="form-check-input" type="checkbox" value="">-->
+<!--            <label class="form-check-label">-->
+<!--                Programansvarig // Program-responsible-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <input class="form-check-input" type="checkbox" value="">-->
+<!--            <label class="form-check-label">-->
+<!--                Prefekt // Head of Department-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <input class="form-check-input" type="checkbox" value="">-->
+<!--            <label class="form-check-label">-->
+<!--                Dekan // Dean-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <input class="form-check-input" type="checkbox" value="">-->
+<!--            <label class="form-check-label">-->
+<!--                Studierektor // Director of studies-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <input class="form-check-input" type="checkbox" value="">-->
+<!--            <label class="form-check-label">-->
+<!--                Central nivå // Central level-->
+<!--            </label>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<br />-->
+<!--    <textarea name="comment" id="comment" class="form-control"-->
+<!--              placeholder="This field will be filled by ombudman"></textarea>-->
+<!--    <br />-->
+<!--    <div align="center">-->
+<!--        <button type="submit" class="btn btn-primary">Submit</button>-->
+<!--    </div>-->
+<!--   </div>-->
+
+    </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <table class="table table-hover">
+
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Faculty</th>
+      <th scope="col">Program</th>
+      <th scope="col">Term</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for errand in user.errands %}
+
+    <tr>
+      <th scope="row">{{ errand.id }}</th>
+      <td>{{ errand.faculty }}</td>
+      <td>{{ errand.program }}</td>
+      <td>{{ errand.term }}</td>
+
+      <td><button type="button" class="close" onClick="deleteNote({{ errand.id }})">
+            <span aria-hidden="true">&times;</span>
+       </button></td>
+    </tr>
+
+    {% endfor %}
+  </tbody>
+
+</table>
+
+
+<!--<ul class="list-group list-group-flush" id="notes">-->
+<!--    {% for note in user.notes %}-->
+<!--    <li class="list-group-item">-->
+<!--        {{ note.data }}-->
+<!--        <button type="button" class="close" onClick="deleteNote({{ note.id }})">-->
+<!--            <span aria-hidden="true">&times;</span>-->
+<!--        </button>-->
+<!--    </li>-->
+<!--    {% endfor %}-->
+<!--</ul>-->
+
+
+{% endblock %}
+
+
+
+
