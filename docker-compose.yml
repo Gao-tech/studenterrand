@@ -1,10 +1,8 @@
 version: "3.9"
 services:
-  student-db-service:
-    container_name: "student-db-service"
+  db-service:
+    container_name: "db-service"
     image: mysql
-#    ports:
-#      - 3308:3306
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=student-db
@@ -19,19 +17,15 @@ services:
     image: "student-service-img"
     build:
       context: .
-    # deploy:
-    #   restart_policy:
-    #     condition: any
-    #     delay: 20s
     restart: always
     environment:
       - DB_USER=new-user
       - DB_PASSWORD=appleW00d
-      - DB_SERVICE=student-db-service
+      - DB_SERVICE=db-service
       - DB_NAME=student-db        
 
     depends_on:
-      - student-db-service
+      - db-service
     ports:
       - "80:5000"
    

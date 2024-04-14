@@ -14,7 +14,7 @@ load_dotenv()
 
 
 db = SQLAlchemy()
-DB_NAME = "student"
+DB_NAME = "student-db"
 
 
 def create_app():
