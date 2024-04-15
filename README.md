@@ -1,8 +1,13 @@
 # The application
-The application is to ma anage student complaints. The collected data will be
-queried and used to analyze and improve the student working environment.
+The application is to maanage students complaints. The collected data will be
+queried and used to analyze and improve the students working environment.
+Students can login, signup, logout. They need to choose faculty, program 
+and which semester that they're studying.In the end recordcomplaint. Then the
+responsible people will cope with the errands. They need to report the process 
+and mostly specify on which management level that they solve it.
 
-# Python Flask 
+
+# Python Flask, Bootstrap, MySQL, Docker and Azure Web App service
 
 Use paython flask framework to complete login, sign up, sign off etc.functions.
 It also controls input of email, errand and password
